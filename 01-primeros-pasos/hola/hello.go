@@ -2,6 +2,8 @@ package hello
 
 import (
 	"errors"
+	"fmt"
+	"math/rand"
 )
 
 func Saludar(name string) (string, error) {
@@ -10,8 +12,20 @@ func Saludar(name string) (string, error) {
 		return "", errors.New("Empy name")
 	}
 
-	mensaje := " Hola, mi nombre es: " + name
+	mensaje := fmt.Sprintf(formatoRandom(), name)
 
 	return mensaje, nil
+
+}
+
+func formatoRandom() string {
+
+	formato := []string{
+		"Hola, %v. Bienvenido",
+		"Encantado de conocerte, %v",
+		"Hola, %v un placer",
+	}
+
+	return formato[rand.Intn(len(formato))]
 
 }
