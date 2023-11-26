@@ -1,17 +1,17 @@
 package hello
 
-import "fmt"
+import (
+	"errors"
+)
 
-func main() {
+func Saludar(name string) (string, error) {
 
-	fmt.Println("Hello world!")
-
-}
-
-func Saludar(name string) string {
+	if name == "" {
+		return "", errors.New("Empy name")
+	}
 
 	mensaje := " Hola, mi nombre es: " + name
 
-	return mensaje
+	return mensaje, nil
 
 }
