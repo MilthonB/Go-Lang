@@ -39,6 +39,7 @@ func main() {
 	variables()
 	basicType()
 	valueZero()
+	typeConvertion()
 }
 
 func variables() {
@@ -76,10 +77,17 @@ func basicType() {
 }
 
 func valueZero() {
-	var i int
-	var f float64
-	var b bool
-	var s string
+	var i int     // valor por default 0
+	var f float64 // valor por default 0
+	var b bool    // valor por defaultfalse
+	var s string  // valor por default ""
 
 	fmt.Printf("Value Zero: %v %v %v %q \n", i, f, b, s)
+}
+
+func typeConvertion() {
+	var x, y int = 2, 4
+	var f float64 = float64(x*x + y*y)
+	var z int = int(f)
+	fmt.Println(x, y, f, z)
 }
