@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"math/cmplx"
 	"time"
 )
 
@@ -29,4 +30,56 @@ func main() {
 		chan:                    %p
 		pointer:                 %p
 	*/
+
+	x, y := suma(2, 4)
+
+	fmt.Printf("The value x is: %v \nThe value y is: %v \n", x, y)
+	fmt.Println(split(17))
+
+	variables()
+	basicType()
+	valueZero()
+}
+
+func variables() {
+	// declaracionde variables como una lista y al final va el tipo de la variable
+	var c, python, java bool // Cuando no lo declaras con un valor tiene el valor de false por defaut
+	var i int                // Cuando no lo declaras con un valor tiene el valor de 0 por default
+	var x, j int = 2, 4      // Declaracion de vairbales inicializadas
+	a, b := 6, 8             // Variables declaraas de forma corta y rapida
+	fmt.Printf("Lenguajes: %v, %v, %v, %v, %v, %v, %v, %v", c, python, java, i, x, j, a, b)
+}
+
+func suma(x, y int) (int, int) { // se pueden retornar variis valores
+	return x * 2, y * 2
+}
+
+func split(sum int) (x, y int) { // Si en el metodo esta definido variable de retorno, estas se enviaran cuando declares la palabra reservada return
+
+	x = sum * 4 / 9
+	y = sum - x
+	return
+}
+
+func basicType() {
+
+	var (
+		ToBe   bool       = false
+		MaxInt uint64     = 1<<64 - 1
+		z      complex128 = cmplx.Sqrt(-5 + 12i)
+	)
+
+	fmt.Printf("\nType: %T Value: %v \n", ToBe, ToBe)
+	fmt.Printf("Type: %T Value: %v \n", MaxInt, MaxInt)
+	fmt.Printf("Type: %T Value: %v \n", z, z)
+
+}
+
+func valueZero() {
+	var i int
+	var f float64
+	var b bool
+	var s string
+
+	fmt.Printf("Value Zero: %v %v %v %q \n", i, f, b, s)
 }
