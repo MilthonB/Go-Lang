@@ -1,3 +1,6 @@
 go 1.21.4
 
-use ./02-variables-datos
+use (
+	./02-variables-datos
+	./03-control-flujo
+)
