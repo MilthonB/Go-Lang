@@ -91,3 +91,12 @@ func typeConvertion() {
 	var z int = int(f)
 	fmt.Println(x, y, f, z)
 }
+
+func inferenceType() {
+	// Las variables si no son declaradas con su tipo de variable estas toman por inferencia el valor que tiene a sue derecha
+
+	var j int = 1
+	var i = j
+	fmt.Println(i, j)
+
+}
