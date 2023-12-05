@@ -40,6 +40,7 @@ func main() {
 	basicType()
 	valueZero()
 	typeConvertion()
+	inferenceType()
 }
 
 func variables() {
@@ -97,6 +98,11 @@ func inferenceType() {
 
 	var j int = 1
 	var i = j
-	fmt.Println(i, j)
+
+	// Pueden ser character, string, boolean o numeric value
+	const World = "Mexico" // las cosntantes son con mayusculas
+	const Truth = true
+
+	fmt.Println(World, Truth, i, j)
 
 }
