@@ -9,7 +9,7 @@ func main() {
 	fmt.Println("Hi world")
 
 	basicFor()
-
+	ifElse()
 }
 
 func basicFor() {
@@ -32,4 +32,8 @@ func basicFor() {
 	//for{} // loop infinito si omites los argumentos
 
 	fmt.Printf("The value sum is: %v", sum)
+}
+
+func ifElse() {
+
 }
