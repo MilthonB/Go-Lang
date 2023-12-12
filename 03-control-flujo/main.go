@@ -9,17 +9,18 @@ import (
 
 func main() {
 
-	fmt.Println("Hi world")
+	//fmt.Println("Hi world")
 
 	//basicFor()
-	fmt.Printf(ifElse(4))
-	fmt.Println(
-		pow(3, 2, 10),
-		pow(3, 3, 20),
-	)
+	//fmt.Printf(ifElse(4))
+	//fmt.Println(
+	//	pow(3, 2, 10),
+	//		pow(3, 3, 20),
+	//	)
 
-	loopFunction()
-	switchSentence()
+	//	loopFunction()
+	//	switchSentence()
+	dDefer()
 }
 
 func basicFor() {
@@ -96,5 +97,15 @@ func switchSentence() {
 
 // Exercise Loops and Functions
 func loopFunction() {
+
+}
+
+func dDefer() {
+
+	defer fmt.Println("1") // Cuarto defer detiene la linea y se brinca a la siguiente hasta completar el ciclo de
+	defer fmt.Println("2") // Tercero defer detiene la linea y se brinca a la siguiente hasta completar el ciclo de
+	defer fmt.Println("3") // Segundo defer detiene la linea y se brinca a la siguiente hasta completar el ciclo de
+	defer fmt.Println("4") // Primero defer detiene la linea y se brinca a la siguiente hasta completar el ciclo de
+	fmt.Println("World")
 
 }
