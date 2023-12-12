@@ -23,7 +23,8 @@ func main() {
 	//  dDefer()
 	//  pPointer()
 	//	sStruct()
-	aArray()
+	//	aArray()
+	mMap()
 }
 
 func basicFor() {
@@ -212,4 +213,36 @@ func aArray() {
 	slice3 := sss[:1]
 	fmt.Println(slice3)
 
+	var slice4 []int
+	fmt.Println(len(slice4), cap(slice4), slice4)
+
+	if slice4 == nil {
+		fmt.Println("nil!!")
+	}
+
+}
+
+func mMap() {
+
+	// var a = [10]int la capacidad es de 10
+	// var a = [10]int {1,2,3,4,5} la capacidad es de 10 pero tiene de 4 elementos len()
+
+	//a := make([]int, 0, 5) // ( el tipo de lo que vas crear, la longuitud, y la capacidad )
+	a := make([]int, 5) // ( el tipo de lo que vas crear, la longuitud, y la capacidad ) len por default es 5 elementos de valores 0
+	printSlice("a", a)
+
+	b := make([]int, 0, 5) // el len es 0 no tiene ningun valor
+	printSlice("b", b)
+
+	c := b[:2]
+	printSlice("c", c)
+
+	d := c[2:5]
+	printSlice("d", d)
+
+}
+
+func printSlice(s string, x []int) {
+	fmt.Printf("%s len=%d cap=%d %v\n",
+		s, len(x), cap(x), x)
 }
