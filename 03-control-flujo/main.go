@@ -24,7 +24,8 @@ func main() {
 	//  pPointer()
 	//	sStruct()
 	//	aArray()
-	mMap()
+	//	mMap()
+	aAppen()
 }
 
 func basicFor() {
@@ -242,7 +243,25 @@ func mMap() {
 
 }
 
+func aAppen() {
+
+	var a []int
+	printSlice1(a)
+
+	// append(arreglo, elemento)
+	a = append(a, 1)
+	printSlice1(a)
+
+	a = append(a, 2, 3, 4, 5, 6)
+	printSlice1(a)
+
+}
+
 func printSlice(s string, x []int) {
 	fmt.Printf("%s len=%d cap=%d %v\n",
 		s, len(x), cap(x), x)
+}
+
+func printSlice1(s []int) {
+	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
