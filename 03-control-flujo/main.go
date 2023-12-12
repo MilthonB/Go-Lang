@@ -199,4 +199,17 @@ func aArray() {
 
 	//	var arrayliteral2 []string // Esto es un arreglo no literal
 
+	// Tipos de slices [0:1], [:1] [1:]
+
+	sss := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+	slice1 := sss[1:]
+	fmt.Println(slice1)
+
+	slice2 := sss[:2]
+	fmt.Println(slice2)
+
+	slice3 := sss[:1]
+	fmt.Println(slice3)
+
 }
