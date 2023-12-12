@@ -242,6 +242,27 @@ func mMap() {
 	d := c[2:5]
 	printSlice("d", d)
 
+	// var m map[string]Vertex esto es nil por lo tanto no sirve tienes que usar el make
+	var m map[string]Vertex
+
+	m = make(map[string]Vertex)
+
+	m["Bell Labs"] = Vertex{
+		Lat:  40.68433,
+		Long: -74.39967,
+	}
+
+	var latlon = map[string]Vertex{ // O los puedes declara dentro de la decalracion del mapa
+		"Bell Labs": Vertex{
+			40.68433, -74.39967,
+		},
+		"Google": Vertex{
+			37.42202, -122.08408,
+		},
+	}
+
+	fmt.Println(latlon)
+
 }
 
 func aAppen() {
@@ -263,8 +284,14 @@ func rRange() {
 	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
 
 	// range for ( i = index, v = value )
+	// Para obviar el index solo susituyelo por _ igual el value
+
+	//for _, v := range pow {
+	//for i, _ := range pow {
+	//for i := range pow {
+
 	for i, v := range pow {
-		fmt.Println("2**%d = %d", i, v)
+		fmt.Printf("2**%d = %d\n", i, v)
 	}
 
 }
@@ -276,4 +303,8 @@ func printSlice(s string, x []int) {
 
 func printSlice1(s []int) {
 	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+}
+
+type Vertex struct {
+	Lat, Long float64
 }
