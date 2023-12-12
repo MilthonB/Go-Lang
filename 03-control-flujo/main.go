@@ -20,8 +20,10 @@ func main() {
 
 	//	loopFunction()
 	//	switchSentence()
-	//dDefer()
-	pPointer()
+	//  dDefer()
+	//  pPointer()
+	//	sStruct()
+	aArray()
 }
 
 func basicFor() {
@@ -128,5 +130,73 @@ func pPointer() {
 	fmt.Println(*p)
 	*p = *p / 21
 	fmt.Println(j)
+
+}
+
+func sStruct() {
+	data := dataPersonal{ // los vcalores pueden ser inferidos por el lenguague si no pones todos los valores de la estructura entonces este los toma por default
+		name:    "Milthon",
+		apllido: "Borboa",
+		edad:    30,
+	}
+
+	fmt.Println(data)
+
+}
+
+type dataPersonal struct {
+	name    string
+	apllido string
+	edad    int
+}
+
+func aArray() {
+
+	var a [2]string
+	a[0] = "Hello"
+	a[1] = "World"
+
+	fmt.Println(a[0], a[1])
+	fmt.Println(a)
+
+	prime := [6]int{1, 2, 3, 4, 5, 6}
+	fmt.Println(prime)
+
+	var sslice []int = prime[1:4]
+	fmt.Println(sslice)
+
+	names := [4]string{
+		"Milthon",
+		"Orlando",
+		"Felicia",
+		"JD",
+	}
+
+	fmt.Println(names)
+
+	e := names[0:2]
+	b := names[1:3]
+	fmt.Println(e, b)
+
+	b[0] = "XXXX" // se pasa como referencia los valores del array al array principal
+	fmt.Println(b)
+	fmt.Println(names)
+
+	s := []struct {
+		i int
+		j int
+	}{
+		{i: 1, j: 2},
+		{i: 2, j: 3},
+		{i: 3, j: 4},
+		{i: 4, j: 5},
+		{i: 5, j: 6},
+	}
+
+	fmt.Println(s)
+
+	//	var arrayliteral [10]string // Esto es un array literal
+
+	//	var arrayliteral2 []string // Esto es un arreglo no literal
 
 }
