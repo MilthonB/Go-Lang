@@ -20,7 +20,8 @@ func main() {
 
 	//	loopFunction()
 	//	switchSentence()
-	dDefer()
+	//dDefer()
+	pPointer()
 }
 
 func basicFor() {
@@ -106,6 +107,26 @@ func dDefer() {
 	defer fmt.Println("2") // Tercero defer detiene la linea y se brinca a la siguiente hasta completar el ciclo de
 	defer fmt.Println("3") // Segundo defer detiene la linea y se brinca a la siguiente hasta completar el ciclo de
 	defer fmt.Println("4") // Primero defer detiene la linea y se brinca a la siguiente hasta completar el ciclo de
+
+	for i := 0; i < 10; i++ {
+		fmt.Println("numero: ", i)
+	}
+
 	fmt.Println("World")
+
+}
+
+func pPointer() {
+	i, j := 42, 2701
+
+	p := &i
+	fmt.Println(*p)
+	*p = 21
+	fmt.Println(i)
+
+	p = &j
+	fmt.Println(*p)
+	*p = *p / 21
+	fmt.Println(j)
 
 }
