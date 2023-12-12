@@ -25,7 +25,8 @@ func main() {
 	//	sStruct()
 	//	aArray()
 	//	mMap()
-	aAppen()
+	// aAppen()
+	rRange()
 }
 
 func basicFor() {
@@ -254,6 +255,17 @@ func aAppen() {
 
 	a = append(a, 2, 3, 4, 5, 6)
 	printSlice1(a)
+
+}
+
+func rRange() {
+
+	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+
+	// range for ( i = index, v = value )
+	for i, v := range pow {
+		fmt.Println("2**%d = %d", i, v)
+	}
 
 }
 
